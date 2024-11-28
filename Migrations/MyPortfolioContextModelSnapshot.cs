@@ -243,29 +243,31 @@ namespace MyPortfolio.Migrations
                     b.ToTable("SocialMedias");
                 });
 
-            modelBuilder.Entity("MyPortfolio.DAL.Entites.Testimonial", b =>
+            modelBuilder.Entity("MyPortfolio.DAL.Entites.ToDoList", b =>
                 {
-                    b.Property<int>("TestimonialId")
+                    b.Property<int>("ToDoListId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TestimonialId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ToDoListId"), 1L, 1);
 
-                    b.Property<int>("Description")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
-                    b.Property<int>("ImageUrl")
-                        .HasColumnType("int");
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("NameSurname")
-                        .HasColumnType("int");
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
-                    b.Property<int>("Title")
-                        .HasColumnType("int");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TestimonialId");
+                    b.HasKey("ToDoListId");
 
-                    b.ToTable("Testimonials");
+                    b.ToTable("ToDoLists");
                 });
 #pragma warning restore 612, 618
         }
