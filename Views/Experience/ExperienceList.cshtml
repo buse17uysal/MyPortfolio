@@ -3,6 +3,15 @@
 	ViewData["Title"] = "ExperienceList";
 	Layout = "~/Views/Layout/Index.cshtml";
 	int count = 0;
+
+	if (ViewData["Title"]?.ToString() == "ExperienceList")
+	{
+		ViewBag.ActiveExperience = "active";  // ViewBag'e "active" sınıfını ata
+	}
+	else
+	{
+		ViewBag.ActiveExperience = "";
+	}
 }
 
 	<div class="content">

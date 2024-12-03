@@ -7,6 +7,8 @@ jQuery(document).ready(function(){
     jQuery('.scrollbar-inner').scrollbar();
 });
 
+
+
 $(document).ready(function(){
 
 	var toggle_sidebar = false,

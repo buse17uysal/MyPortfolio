@@ -2,11 +2,11 @@
 
 namespace MyPortfolio.Controllers
 {
-    public class LayoutController : Controller
-    {
-        public IActionResult Index()
-        {
-            return View();
-        }
-    }
+	public class LayoutController : Controller
+	{
+		public IActionResult Index()
+		{
+			return View();
+		}
+	}
 }

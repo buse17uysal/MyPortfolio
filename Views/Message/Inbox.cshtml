@@ -3,6 +3,16 @@
 	ViewData["Title"] = "Inbox";
 	Layout = "~/Views/Layout/Index.cshtml";
 	int count = 0;
+
+	// Sayfa adı kontrolü
+	if (ViewData["Title"]?.ToString() == "Inbox")
+	{
+		ViewBag.ActiveInbox = "active";  // ViewBag'e "active" sınıfını ata
+	}
+	else
+	{
+		ViewBag.ActiveInbox = "";
+	}
 }
 
 <div class="content">

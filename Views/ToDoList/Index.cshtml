@@ -4,6 +4,15 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Layout/Index.cshtml";
 	int count = 0;
+	// Sayfa adı kontrolü
+	if (ViewData["Title"]?.ToString() == "Index")
+	{
+		ViewBag.ActiveToList = "active";  // ViewBag'e "active" sınıfını ata
+	}
+	else
+	{
+		ViewBag.ActiveToList = "";
+	}
 }
 
 

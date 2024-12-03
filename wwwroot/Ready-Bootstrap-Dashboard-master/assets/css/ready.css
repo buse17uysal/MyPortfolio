@@ -1,4 +1,4 @@
-/*!
+﻿/*!
 
  =========================================================
  * Ready Bootstrap Dashboard (Bootstrap 4)
@@ -2169,6 +2169,8 @@ body {
 .sidebar .nav .nav-item {
   display: list-item;
 }
+
+
 .sidebar .nav .nav-item.active a {
   color: #575962;
   font-weight: 700;

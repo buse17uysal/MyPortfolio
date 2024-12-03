@@ -2,6 +2,15 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Layout/Index.cshtml";
+
+	if (ViewData["Title"]?.ToString() == "Index")
+	{
+		ViewBag.ActiveStatic = "active";  // ViewBag'e "active" sınıfını ata
+	}
+	else
+	{
+		ViewBag.ActiveStatic = "";
+	}
 }
 
 <div class="content">

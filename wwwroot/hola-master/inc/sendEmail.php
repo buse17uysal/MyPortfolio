@@ -1,7 +1,7 @@
 ﻿<?php
 
 // Replace this with your own email address
-$siteOwnersEmail = 'user@website.com';
+$siteOwnersEmail = 'buseuysal3158@gmail.com';
 
 
 if($_POST) {
@@ -13,18 +13,18 @@ if($_POST) {
 
     // Check Name
     if (strlen($name) < 2) {
-        $error['name'] = "Please enter your name.";
+        $error['name'] = "Lütfen isim giriniz.";
     }
     // Check Email
     if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-        $error['email'] = "Please enter a valid email address.";
+        $error['email'] = "Lütfen geçerli bir email adresi giriniz";
     }
     // Check Message
     if (strlen($contact_message) < 15) {
-        $error['message'] = "Please enter your message. It should have at least 15 characters.";
+        $error['message'] = "Lütfen mesajınız 15 karakterden gazla olsun.";
     }
     // Subject
-    if ($subject == '') { $subject = "Contact Form Submission"; }
+    if ($subject == '') { $subject = "Lütfen konuyu giriniz."; }
 
 
     // Set Message
@@ -49,8 +49,8 @@ if($_POST) {
         ini_set("sendmail_from", $siteOwnersEmail); // for windows server
         $mail = mail($siteOwnersEmail, $subject, $message, $headers);
 
-        if ($mail) { echo "OK"; }
-        else { echo "Something went wrong. Please try again."; }
+        if ($mail) { echo "Gönderildi."; }
+        else { echo "Bir şeyler ters gitti. Lütfen tekrar deneyiniz."; }
         
     } # end if - no validation error
 

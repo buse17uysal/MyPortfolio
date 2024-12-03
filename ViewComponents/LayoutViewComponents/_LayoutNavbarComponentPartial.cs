@@ -8,7 +8,8 @@ namespace MyPortfolio.ViewComponents.LayoutViewComponents
 		MyPortfolioContext context = new MyPortfolioContext();
 		public IViewComponentResult Invoke()
 		{
-			ViewBag.toDoListCount=context.ToDoLists.Where(x=>x.Status==false).Count();
+			ViewBag.messageCount=context.Messages.Where(x => x.IsRead == false).Count();
+            ViewBag.toDoListCount=context.ToDoLists.Where(x=>x.Status==false).Count();
 			var values= context.ToDoLists.Where(x=>x.Status==false).ToList();
 			return View(values);
 		}
