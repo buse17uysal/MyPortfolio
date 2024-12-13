@@ -67,26 +67,20 @@
 					<p>Deneyimler</p>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="tables.html" class="nav-link">
-					<i class="la la-star-o"></i>
-					<p>Öne Çıkan Alan</p>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a href="notifications.html" class="nav-link">
+			<li class="nav-item @ViewBag.ActiveContact">
+				<a href="/Contact/ContactList/" class="nav-link">
 					<i class="la la-phone"></i>
 					<p>İletişim Bilgileri</p>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="typography.html" class="nav-link">
-					<i class="la la-users"></i>
-					<p>Portfolyo</p>
+			<li class="nav-item @ViewBag.ActivePortfolio">
+				<a href="/Portfolio/ProjectList" class="nav-link">
+					<i class="la la-github"></i>
+					<p>Projelerim</p>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a href="icons.html" class="nav-link">
+			<li class="nav-item @ViewBag.ActiveSkill">
+				<a href="/Skill/SkillList/" class="nav-link">
 					<i class="la la-code"></i>
 					<p>Yeteneklerim</p>
 				</a>

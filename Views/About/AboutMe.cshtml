@@ -5,13 +5,12 @@
 
     if (ViewData["Title"]?.ToString() == "AboutMe")
     {
-        ViewBag.ActiveAbout = "active";  // ViewBag'e "active" sınıfını ata
+        ViewBag.ActiveAbout = "active"; 
     }
     else
     {
         ViewBag.ActiveAbout = "";
     }
-    int count = 0;
 }
 <!DOCTYPE html>
 <html>
@@ -30,11 +29,6 @@
                                 <tr>
                                     @foreach (var item in Model)
                                     {
-                                        count++;
-                                        <td>
-                                            <p>@count</p>
-
-                                        </td>
                                         <td>
                                             <blockquote>
                                                 <p class="blockquote blockquote-primary">

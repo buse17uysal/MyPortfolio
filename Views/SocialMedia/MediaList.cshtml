@@ -1,0 +1,76 @@
+﻿@model List<SocialMedia>
+@{
+    ViewData["Title"] = "MediaList";
+    Layout = "~/Views/Layout/Index.cshtml";
+
+
+    if (ViewData["Title"]?.ToString() == "MediaList")
+    {
+        ViewBag.ActiveMedia = "active";
+    }
+    else
+    {
+        ViewBag.ActiveMedia = "";
+    }
+    int count = 0; 
+    var words = new[] { "facebook", "instagram", "linkedin", "twitter", "github" };
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Sosyal Medya</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Sosyal Medya Hesaplarım</div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">İkon</th>
+                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Link</th>
+                                    <th scope="col">Güncelle</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    var iconClass = item.Icon;
+
+                                    foreach (var word in words)
+                                    {
+                                        if (iconClass.Contains("im im-" + word))
+                                        {
+                                            iconClass = "la la-" + word;  
+                                            break; 
+                                        }
+                                    }
+
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td><i class="@iconClass la-3x"></i></td>
+                                        <td>@item.Title</td>
+                                        <td><a class="link" target="_blank" href="@item.Url">Hesap Linki</a></td>
+                                        <td><a href="/SocialMedia/UpdateAccount/@item.SocialMediaId" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/SocialMedia/DeleteAccount/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <a href="/SocialMedia/CreateAccount/" class="btn btn-primary">Yeni Hesap Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
