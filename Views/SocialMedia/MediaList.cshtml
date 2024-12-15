@@ -31,7 +31,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">İkon</th>
-                                    <th scope="col">Başlık</th>
+                                    <th scope="col">Platform</th>
                                     <th scope="col">Link</th>
                                     <th scope="col">Güncelle</th>
                                     <th scope="col">Sil</th>
@@ -57,13 +57,13 @@
                                         <td><i class="@iconClass la-3x"></i></td>
                                         <td>@item.Title</td>
                                         <td><a class="link" target="_blank" href="@item.Url">Hesap Linki</a></td>
-                                        <td><a href="/SocialMedia/UpdateAccount/@item.SocialMediaId" class="btn btn-success">Güncelle</a></td>
-                                        <td><a href="/SocialMedia/DeleteAccount/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
+                                        <td><a href="/SocialMedia/UpdateSocialMedia/@item.SocialMediaId" class="btn btn-success">Güncelle</a></td>
+                                        <td><a href="/SocialMedia/DeleteSocialMedia/@item.SocialMediaId" class="btn btn-danger">Sil</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="/SocialMedia/CreateAccount/" class="btn btn-primary">Yeni Hesap Ekle</a>
+                        <a href="/SocialMedia/CreateSocialMedia/" class="btn btn-primary">Yeni Hesap Ekle</a>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,43 @@
+﻿@model SocialMedia
+@{
+    ViewData["Title"] = "CreateSocialMedia";
+    Layout = "~/Views/Layout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Projelerim</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Deneyim Ekleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            <input type="hidden" asp-for="SocialMediaId" />
+
+                            <label>Platform</label>
+                            <input type="text" asp-for="Title" class="form-control" />
+                            <br />
+
+                            <label>İkon</label>
+                            <input type="text" asp-for="Icon" class="form-control" />
+                            <small id="emailHelp" class="form-text text-muted">"la la-" formatında yazınız. Listeden kontrol ediniz.</small>
+                            <br />
+
+                            <label>Hesap Linki</label>
+                            <input type="url" asp-for="Url" class="form-control" />
+                            <br />
+
+                            <button class="btn btn-primary">Hesabı Ekle</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
