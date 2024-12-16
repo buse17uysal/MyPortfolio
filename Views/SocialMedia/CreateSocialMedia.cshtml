@@ -24,7 +24,10 @@
 
                             <label>İkon</label>
                             <input type="text" asp-for="Icon" class="form-control" />
-                            <small id="emailHelp" class="form-text text-muted">"la la-" formatında yazınız. Listeden kontrol ediniz.</small>
+                            <small id="emailHelp" class="form-text text-muted">
+                                "im im-" formatında yazınız.
+                                <a class="link" href="#" data-toggle="modal" data-target="#iconModal">Listeden</a> kontrol ediniz ve uygun formatta yazınız.
+                            </small>
                             <br />
 
                             <label>Hesap Linki</label>
@@ -41,3 +44,4 @@
     </div>
 </div>
 
+@await Html.PartialAsync("_IconList")

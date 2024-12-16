@@ -13,7 +13,6 @@
         ViewBag.ActiveMedia = "";
     }
     int count = 0; 
-    var words = new[] { "facebook", "instagram", "linkedin", "twitter", "github" };
 }
 
 <div class="content">
@@ -40,14 +39,11 @@
                             <tbody>
                                 @foreach (var item in Model)
                                 {
-                                    var iconClass = item.Icon;
-
-                                    foreach (var word in words)
+                                    var iconClass = item.Icon;                                                                    
                                     {
-                                        if (iconClass.Contains("im im-" + word))
+                                        if (iconClass.Contains("im im-"))
                                         {
-                                            iconClass = "la la-" + word;  
-                                            break; 
+                                            iconClass = iconClass.Replace("im im-", "la la-");
                                         }
                                     }
 
