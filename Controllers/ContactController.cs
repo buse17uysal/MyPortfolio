@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entites;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize(Roles = "Admin")]
+
     public class ContactController : Controller
     {
         MyPortfolioContext context = new MyPortfolioContext();  

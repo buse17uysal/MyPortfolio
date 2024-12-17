@@ -1,75 +1,83 @@
 ﻿@model List<Message>
 @{
-	ViewData["Title"] = "Inbox";
-	Layout = "~/Views/Layout/Index.cshtml";
-	int count = 0;
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Layout/Index.cshtml";
+    int count = 0;
 
-	// Sayfa adı kontrolü
-	if (ViewData["Title"]?.ToString() == "Inbox")
-	{
-		ViewBag.ActiveInbox = "active";  // ViewBag'e "active" sınıfını ata
-	}
-	else
-	{
-		ViewBag.ActiveInbox = "";
-	}
+    if (ViewData["Title"]?.ToString() == "Inbox")
+    {
+        ViewBag.ActiveInbox = "active";
+    }
+    else
+    {
+        ViewBag.ActiveInbox = "";
+    }
+
+    var filter = Context.Request.Query["filter"].ToString();
 }
 
 <div class="content">
-	<div class="container-fluid">
-		<h4 class="page-title">Mesajlar</h4>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="card">
-					<div class="card-header">
-						<div class="card-title">Gelen Mesaj Listesi</div>
-					</div>
-					<div class="card-body">
-						<div class="card-sub">
-							Mesajlar ile ilgili işlemleri aşağıdaki panelden yapabilirsiniz :
-						</div>
-						<table class="table mt-3">
-							<thead>
-								<tr>
-									<th scope="col">#</th>
-									<th scope="col">Gönderen</th>
-									<th scope="col">Konu</th>
-									<th scope="col">Tarih</th>
-									<th scope="col">Mesajı Aç</th>
-									<th scope="col">Durum</th>
-									<th scope="col">Sil</th>
-								</tr>
-							</thead>
-							<tbody>
-								@foreach (var item in Model)
-								{
-									count++;
-									<tr>
-										<td>@count</td>
-										<td>@item.NameSurname</td>
-										<td>@item.Subject</td>
-										<td>@item.SendDate.ToShortDateString()</td>
-										<td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
-										@if(item.IsRead==true)
-										{
-											<td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
+    <div class="container-fluid">
+        <h4 class="page-title">Mesajlar</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Gelen Mesaj Listesi</div>
+                    </div>
+                    <div class="card-body">
 
-										}
-										else
-										{
-											<td><a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+                        <div class="mb-3">
+                            <a href="?filter=unread" class="btn btn-primary @((filter == "unread") ? "active" : "")">Okunmamış Mesajlar</a>
+                            <a href="?filter=read" class="btn btn-secondary @((filter == "read") ? "active" : "")">Okunmuş Mesajlar</a>
+                            <a href="/Message/Inbox" class="btn btn-success @((string.IsNullOrEmpty(filter)) ? "active" : "")">Tüm Mesajlar</a>
+                        </div>
 
-										}
-										<td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>										
-									</tr>
+                        <table class="table mt-3">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Gönderen</th>
+                                    <th scope="col">Konu</th>
+                                    <th scope="col">Tarih</th>
+                                    <th scope="col">Mesajı Aç</th>
+                                    <th scope="col">Durum</th>
+                                    <th scope="col">Sil</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    if ((filter == "unread" && item.IsRead) || (filter == "read" && !item.IsRead))
+                                    {
+                                        continue;
+                                    }
 
-								}
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                                    count++;
+                                    <tr>
+                                        <td>@count</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.SendDate.ToShortDateString()</td>
+                                        <td><a href="/Message/MessageDetail/@item.MessageId" class="btn btn-warning">Mesajı Aç</a></td>
+                                        @if (item.IsRead == true)
+                                        {
+                                            <td><a href="/Message/ChangeIsReadToFalse/@item.MessageId" class="btn btn-dark">Okunmadı Olarak İşaretle</a></td>
+
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/Message/ChangeIsReadToTrue/@item.MessageId" class="btn btn-info">Okundu Olarak İşaretle</a></td>
+
+                                        }
+                                        <td><a href="/Message/DeleteMessage/@item.MessageId" class="btn btn-danger">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-

@@ -4,10 +4,10 @@
 	ViewData["Title"] = "Index";
 	Layout = "~/Views/Layout/Index.cshtml";
 	int count = 0;
-	// Sayfa adı kontrolü
+
 	if (ViewData["Title"]?.ToString() == "Index")
 	{
-		ViewBag.ActiveToList = "active";  // ViewBag'e "active" sınıfını ata
+		ViewBag.ActiveToList = "active";  
 	}
 	else
 	{
@@ -26,9 +26,6 @@
 						<div class="card-title">Yapılacaklar Listesi</div>
 					</div>
 					<div class="card-body">
-						<div class="card-sub">
-							Yapılacaklar ile ilgili işlemleri aşağıdaki panelden gerçekleştirebilirsiniz :
-						</div>
 						<table class="table mt-3">
 							<thead>
 								<tr>
@@ -73,5 +70,4 @@
 		</div>
 	</div>
 </div>
-
 

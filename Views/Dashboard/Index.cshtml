@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Layout/Index.cshtml";
+
+    if (ViewData["Title"]?.ToString() == "Index")
+    {
+        ViewBag.ActiveDashboard = "active";
+    }
+    else
+    {
+        ViewBag.ActiveDashboard = "";
+    }
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Dashboard</h4>
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Dünya Haritası</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mapcontainer">
+                        <div class="map">
+                            <span>Alternative content for the map</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">2018 Sales</h4>
+                    <p class="card-category">
+                        Number of products sold
+                    </p>
+                </div>
+                <div class="card-body">
+                    <div id="salesChart" class="chart"></div>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+</div>
+
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/jquery.3.2.1.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/popper.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/bootstrap.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/chartist.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chart-circle/circles.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/ready.min.js"></script>
+<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/demo.js"></script>
+
+

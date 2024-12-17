@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyPortfolio.DAL.Context;
 using MyPortfolio.DAL.Entites;
 
 namespace MyPortfolio.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class MessageController : Controller
     {
         MyPortfolioContext context = new MyPortfolioContext();
@@ -40,7 +42,6 @@ namespace MyPortfolio.Controllers
             return View(value);
         }
         [HttpPost]
-        [HttpPost]
         public IActionResult CreateMessage(Message message)
         {
             message.IsRead = false;
@@ -48,6 +49,32 @@ namespace MyPortfolio.Controllers
             context.SaveChanges();
             return RedirectToAction("Inbox");
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult SendMessage(Message message)
+        {
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Form verileri geçersiz. Lütfen tüm alanları doğru doldurun.";
+                return Redirect("https://localhost:7071/Default/Index#contact");
+            }
 
+            var newMessage = new Message
+            {
+                NameSurname = message.NameSurname,
+                Email = message.Email,
+                Subject = message.Subject,
+                MessageDetail = message.MessageDetail,
+                SendDate = DateTime.Now,
+                IsRead = false
+            };
+
+            context.Messages.Add(newMessage);
+            context.SaveChanges();
+
+            TempData["Success"] = "Mesajınız başarıyla gönderildi!";
+            return Redirect("https://localhost:7071/Default/Index#contact");
+        }
     }
 }
+

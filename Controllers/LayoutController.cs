@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyPortfolio.Controllers
 {
 	public class LayoutController : Controller
 	{
-		public IActionResult Index()
+        [Authorize(Roles = "Admin")]
+
+        public IActionResult Index()
 		{
 			return View();
 		}
