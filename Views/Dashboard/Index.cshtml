@@ -18,51 +18,195 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Dünya Haritası</h4>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle"
+                                type="button"
+                                id="dropdownMenu1"
+                                data-toggle="dropdown"
+                                aria-expanded="false">
+                            Harita Seçiniz
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="changeMap('Çanakkale Haritası', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d781218.263800536!2d25.943444393620663!3d40.10587597255381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b047a28835b0ab%3A0x40b6d45bd97e955!2s%C3%87anakkale!5e0!3m2!1str!2str!4v1736696916378!5m2!1str!2str')">Çanakkale Haritası</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="changeMap('Türkiye Haritası', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6353144.986219095!2d29.844031298588423!3d38.96689186446475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2zVMO8cmtpeWU!5e0!3m2!1str!2str!4v1736697210906!5m2!1str!2str')">Türkiye Haritası</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="changeMap('Dünya Haritası', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10018745.714211952!2d-103.82729812884945!3d36.21080511789833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87b1a5bc1a4e2751%3A0x602cd180926f1e26!2sWorld!5e0!3m2!1sen!2sus!4v1736697210906!5m2!1sen!2sus')">Dünya Haritası</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="card-body">
-                    <div class="mapcontainer">
-                        <div class="map">
-                            <span>Alternative content for the map</span>
+                    <div class="map-container">
+                        <iframe id="mapFrame"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d781218.263800536!2d25.943444393620663!3d40.10587597255381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b047a28835b0ab%3A0x40b6d45bd97e955!2s%C3%87anakkale!5e0!3m2!1str!2str!4v1736696916378!5m2!1str!2str"
+                                width="100%"
+                                height="450"
+                                style="border:0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeMap(title, url) {
+        // Buton üzerindeki yazıyı değiştir
+        document.getElementById('dropdownMenu1').innerText = title;
+        // Harita iframe'ini değiştir
+        document.getElementById('mapFrame').src = url;
+    }
+</script>
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+
+                    <div class="progress-card">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted">Yetenekler</span>
+                            <span class="text-muted fw-bold">@ViewBag.v1 </span>
+                        </div>
+                        <div class="progress mb-2" style="height: 7px;">
+                            <div class="progress-bar bg-wrong"
+                                 role="progressbar"
+                                 style="width: calc((@ViewBag.v1 / 10) * 100%)"
+                                 aria-valuenow="@ViewBag.v1"
+                                 aria-valuemin="0"
+                                 aria-valuemax="10"
+                                 data-toggle="tooltip"
+                                 data-placement="top"
+                                 title="@ViewBag.v1 / 10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted">Mesajlar</span>
+                            <span class="text-muted fw-bold">@ViewBag.v2 </span>
+                        </div>
+                        <div class="progress mb-2" style="height: 7px;">
+                            <div class="progress-bar bg-success"
+                                 role="progressbar"
+                                 style="width: calc((@ViewBag.v2 / 10) * 100%)"
+                                 aria-valuenow="@ViewBag.v2"
+                                 aria-valuemin="0"
+                                 aria-valuemax="10"
+                                 data-toggle="tooltip"
+                                 data-placement="top"
+                                 title="@ViewBag.v2 / 10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted">Deneyimler</span>
+                            <span class="text-muted fw-bold">@ViewBag.v5</span>
+                        </div>
+                        <div class="progress mb-2" style="height: 7px;">
+                            <div class="progress-bar bg-info"
+                                 role="progressbar"
+                                 style="width: calc((@ViewBag.v5 / 10) * 100%)"
+                                 aria-valuenow="@ViewBag.v5"
+                                 aria-valuemin="0"
+                                 aria-valuemax="10"
+                                 data-toggle="tooltip"
+                                 data-placement="top"
+                                 title="@ViewBag.v5 / 10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted">Projeler</span>
+                            <span class="text-muted fw-bold">@ViewBag.v6</span>
+                        </div>
+                        <div class="progress mb-2" style="height: 7px;">
+                            <div class="progress-bar bg-danger"
+                                 role="progressbar"
+                                 style="width: calc((@ViewBag.v6 / 10) * 100%)"
+                                 aria-valuenow="@ViewBag.v6"
+                                 aria-valuemin="0"
+                                 aria-valuemax="10"
+                                 data-toggle="tooltip"
+                                 data-placement="top"
+                                 title="@ViewBag.v6 / 10">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="progress-card">
+                        <div class="d-flex justify-content-between mb-1">
+                            <span class="text-muted">Sosyal Medya Hesapları</span>
+                            <span class="text-muted fw-bold">@ViewBag.v7</span>
+                        </div>
+                        <div class="progress mb-2" style="height: 7px;">
+                            <div class="progress-bar bg-warning"
+                                 role="progressbar"
+                                 style="width: calc((@ViewBag.v7 / 10) * 100%)"
+                                 aria-valuenow="@ViewBag.v7"
+                                 aria-valuemin="0"
+                                 aria-valuemax="10"
+                                 data-toggle="tooltip"
+                                 data-placement="top"
+                                 title="@ViewBag.v7 / 10">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">2018 Sales</h4>
-                    <p class="card-category">
-                        Number of products sold
-                    </p>
-                </div>
+        <div class="col-md-3">
+            <div class="card card-stats">
                 <div class="card-body">
-                    <div id="salesChart" class="chart"></div>
+                    <p class="fw-bold mt-1">İstatistikler</p>
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center icon-warning">
+                                <i class="la la-envelope-o text-warning"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                            <div class="numbers">
+                                <p class="card-category">Gelen Mesajlar</p>
+                                <h4 class="card-title">@ViewBag.v3</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="icon-big text-center">
+                                <i class="la la-list-ol text-primary"></i>
+                            </div>
+                        </div>
+                        <div class="col-7 d-flex align-items-center">
+                            <div class="numbers">
+                                <p class="card-category">Yapılacaklar</p>
+                                <h4 class="card-title">@ViewBag.v9</h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-       
     </div>
 </div>
 
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/jquery.3.2.1.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/popper.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/core/bootstrap.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/chartist.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chartist/plugin/chartist-plugin-tooltip.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-mapael/maps/world_countries.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/chart-circle/circles.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/ready.min.js"></script>
-<script src="~/Ready-Bootstrap-Dashboard-master/assets/js/demo.js"></script>
+
 
 

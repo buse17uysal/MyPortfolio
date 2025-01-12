@@ -26,12 +26,13 @@
 				<li class="nav-item dropdown hidden-caret">
 					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="la la-envelope"></i>
+						<span class="notification">@ViewBag.messageCount</span>
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="/Message/Inbox">Gelen Mesajlar</a>
-						<a class="dropdown-item" href="/Message/Inbox">Yeni Mesajlar <span class="badge badge-danger">@ViewBag.messageCount</span></a> 
+						<a class="dropdown-item" href="/Message/Inbox">Yeni Mesajlar</a> 
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">İletişim Paneli</a>
+						<a class="dropdown-item" href="/Contact/ContactList/">İletişim Paneli</a>
 					</div>
 				</li>
 
@@ -82,13 +83,13 @@
 							</div>
 						</li>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="ti-user"></i> Profilim</a>
+						<a class="dropdown-item" href="/Admin/Profile/"><i class="ti-user"></i> Profilim</a>
 						<a class="dropdown-item" href="/Default/Index/" target="_blank"><i class="ti-home"></i> Siteye Git</a>
 						<a class="dropdown-item" href="/Message/Inbox"><i class="ti-email"></i> Gelen Mesajlar</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="ti-settings"></i> Şifre Değiştir</a>
+						<a class="dropdown-item" href="/Admin/Profile/"><i class="ti-settings"></i> Şifre Değiştir</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#"><i class="fa fa-power-off"></i> Çıkış Yap</a>
+						<a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal"><i class="fa fa-power-off"></i> Çıkış Yap</a>
 
 					</ul>
 					<!-- /.dropdown-user -->
@@ -97,3 +98,30 @@
 		</div>
 	</nav>
 </div>
+
+
+<!-- Çıkış Yap Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="logoutModalLabel">Çıkış Yapmak Üzeresiniz</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				Çıkmak istediğinize emin misiniz?
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Vazgeç</button>
+				<a href="/Login/Logout" class="btn btn-primary">Çıkış Yap</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap JS ve jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+

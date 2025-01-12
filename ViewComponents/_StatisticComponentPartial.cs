@@ -1,12 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyPortfolio.DAL.Context;
 
 namespace MyPortfolio.ViewComponents
 {
     public class _StatisticComponentPartial:ViewComponent
     {
-        public IViewComponentResult Invoke()
+		MyPortfolioContext context = new MyPortfolioContext();
+
+		public IViewComponentResult Invoke()
         {
-            return View();
+			ViewBag.v1 = context.Skills.Count();
+			ViewBag.v6 = context.Portfolios.Count();
+
+			return View();
         }
     }
 }

@@ -34,8 +34,6 @@
                         <div class="card-header">
                             <div class="card-title">Profil Bilgilerim</div>
                         </div>
-                        <!-- Güncelle Butonu --><br />
-                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#updateModal">Bilgileri Güncelle</button>
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="AdminNameSurname" class="form-control-plaintext"><strong>Adınız Soyadınız</strong></label>
@@ -52,6 +50,7 @@
                                 <input type="password" asp-for="AdminPassword" value="********" required class="form-control" readonly />
                                 <span asp-validation-for="AdminPassword" class="text-danger"></span>
                             </div>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#updateModal">Bilgileri Güncelle</button>
                         </div>
                     </div>
                 </div>
@@ -121,9 +120,6 @@
             });
         });
     </script>
-
-
-
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>

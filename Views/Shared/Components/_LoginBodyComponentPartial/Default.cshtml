@@ -5,7 +5,7 @@
 <body>
     <!-- Login Form -->
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('/Login_v16/images/bg-01.jpg');">
+        <div class="container-login100" style="background-image: url('https://i.hizliresim.com/6c7642q.png');">
             <div class="wrap-login100 p-t-30 p-b-50">
                 <span class="login100-form-title p-b-41">
                     Sisteme Giriş
@@ -59,11 +59,8 @@
                         } else {
                             alert("Eksik alan bırakmayınız!");
                         }
-                        // Giriş başarılı: Preloader'ı 1 saniye boyunca gösterdikten sonra yönlendirme yap
-                        // window.location.href = "/Dashboard/Index";  // Dashboard'a yönlendir
+                        
                     } else {
-                        // Giriş başarısızsa, hata mesajı göster ve preloader'ı gizle
-
                         if (AdminMail.value.length > 0 && AdminPassword.value.length > 0) {
                             alert("Kullanıcı adı veya şifre yanlış!");
                         } else {
@@ -77,26 +74,5 @@
                 });
 
         }
-        // document.getElementById("loginForm").addEventListener("submit", function (e) {
-        //     e.preventDefault(); // Formun varsayılan davranışını engelle
-
-        //     // Preloader'ı hemen görünür yap
-        //
-
-        //     // Form verilerini JSON formatına dönüştür
-        //     const formData = {
-        //         AdminMail: document.getElementById("AdminMail").value,
-        //         AdminPassword: document.getElementById("AdminPassword").value
-        //     };
-
-        //     // 1 saniye bekle ve sonra yönlendirme yap
-        //     setTimeout(function () {
-        //         // Fetch API ile verileri gönder
-        //
-        //     }, 1000); // 1 saniye bekledikten sonra yönlendirme
-        // });
-
-
-
     </script>
 </body>
