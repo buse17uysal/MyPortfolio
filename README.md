@@ -50,15 +50,16 @@ Admin paneli, portföyünüzü yönetmek için kapsamlı bir kontrol sağlar. Pa
 ![Ekran Görüntüleri](Portfolyo.png)
 
 ### Admin Paneli  
-![Ekran Görüntüleri](giriş.png)
+![Ekran Görüntüleri](giris.png)
 ![Ekran Görüntüleri](dashboard.png)
 ![Ekran Görüntüleri](Adsız tasarım (1).png)
 ![Ekran Görüntüleri](Adsız tasarım (3).png)
 ![Ekran Görüntüleri](Adsız tasarım (4).png)
 ![Ekran Görüntüleri](Adsız tasarım (5).png)
+![Ekran Görüntüleri](ikon liste.png)
 ![Ekran Görüntüleri](istatistik1.png)
 ![Ekran Görüntüleri](istatistik2.png)
-![Ekran Görüntüleri](çıkış.png)
+![Ekran Görüntüleri](cıkıs.png)
 
 
 
