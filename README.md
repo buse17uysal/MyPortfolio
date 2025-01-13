@@ -47,7 +47,7 @@ Admin paneli, portföyünüzü yönetmek için kapsamlı bir kontrol sağlar. Pa
 ## 📸 Ekran Görüntüleri  
 
 ### Kullanıcı Arayüzü  
-![Ekran Görüntüleri](Portfolyo.png)
+![](EkranGoruntuleri/Portfolyo.png)
 
 ### Admin Paneli  
 ![](EkranGoruntuleri/giris.png)
