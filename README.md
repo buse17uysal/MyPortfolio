@@ -40,7 +40,7 @@ Admin paneli, portföyünüzü yönetmek için kapsamlı bir kontrol sağlar. Pa
 - **Entity Framework (Code-First Yaklaşımı):** Veritabanı işlemleri için kullanılmıştır.  
 - **MSSQL:** Veritabanı yönetimi için tercih edilmiştir.  
 - **View Components:** Projede dinamik içerik oluşturmak için kullanılmıştır.  
-- **HTML, CSS, ThemaKit, Bootstrap:** Kullanıcı arayüzü için modern ve duyarlı tasarım.  
+- **HTML, CSS, ThemaKita, Bootstrap:** Kullanıcı arayüzü için modern ve duyarlı tasarım.  
 - **JavaScript:** Arayüzdeki dinamik etkileşimler için kullanılmıştır.  
 
 
