@@ -7,13 +7,13 @@ Bu proje, Murat Yücedağ'ın Udemy'de bulunan "Asp.Net Core ile Admin Panelli D
 
 ### **Kullanıcı Arayüzü**  
 Admin paneli sayesinde dinamik bir şekilde güncellenebilir bilgiler ile kullanıcı dostu bir arayüz tasarlanmıştır.
--Sosyal Medya hesaplarına doğrudan erişim.
--Yeteneklerin yüzdesel gösterimi
--İndirilebilir CV
--Deneyim çizelgesi
--Proje kısa bilgileri ve link ile github koduna erişim
--Dinamik bilgiler ve admin paneline geçiş
--Doğrudan gelen kutusuna gönderilebilir iletişim kısmı
+- Sosyal Medya hesaplarına doğrudan erişim.
+- Yeteneklerin yüzdesel gösterimi
+- İndirilebilir CV
+- Deneyim çizelgesi
+- Proje kısa bilgileri ve link ile github koduna erişim
+- Dinamik bilgiler ve admin paneline geçiş
+- Doğrudan gelen kutusuna gönderilebilir iletişim kısmı
 
 
 ### **Admin Paneli**  
