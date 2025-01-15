@@ -59,7 +59,7 @@ Admin paneli, portföyünüzü yönetmek için kapsamlı bir kontrol sağlar. Pa
 ![](EkranGoruntuleri/ikon_liste.png)
 ![](EkranGoruntuleri/istatistik1.png)
 ![](EkranGoruntuleri/istatistik2.png)
-![](EkranGoruntuleri/cıkıs.png)
+![](EkranGoruntuleri/cikis.png)
 
 
 
