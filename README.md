@@ -1,6 +1,6 @@
 # MyPortfolio
 
-Bu proje, Murat Yücedağ'ın Udemy'de bulunan "Asp.Net Core ile Admin Panelli Dinamik Bir Portfolyo Geliştirelim Part 1-2" kursunda yapmış olduğum bir portfölyo uygulamasıdır. Proje, hem kullanıcı dostu bir arayüz hem de güçlü bir admin paneli sunar.
+Bu proje, Murat Yücedağ'ın Udemy'de bulunan "Asp.Net Core ile Admin Panelli Dinamik Bir Portfolyo Geliştirelim Part 1-2" kursunda yapmış olduğum bir portfolyo uygulamasıdır. Proje, hem kullanıcı dostu bir arayüz hem de güçlü bir admin paneli sunar.
 
 
 ## 🚀 Proje Özellikleri  
